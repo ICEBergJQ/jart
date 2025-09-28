@@ -11,8 +11,8 @@ public class Main {
         for (int i = 0; i < 5; i++) {
             Point point = Point.random(image.getWidth(), image.getHeight());
             point.draw(image);
-            // Circle circle = Circle.random(image.getWidth(), image.getHeight());
-            // circle.draw(image);
+            Circle circle = Circle.random(image.getWidth(), image.getHeight());
+            circle.draw(image);
         }
 
          for (int i = 0; i < 5; i++) {
