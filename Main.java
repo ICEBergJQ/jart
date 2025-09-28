@@ -8,8 +8,8 @@ public class Main {
         // Triangle triangle = new Triangle(new Point(100, 100), new Point(900, 900), new Point(100, 900));
         // triangle.draw(image);
 
-        for (int i = 0; i < 50; i++) {
-            Point point = new Point(i, i);
+        for (int i = 0; i < 5000; i++) {
+            Point point = Point.random(image.getWidth(), image.getHeight());
             point.draw(image);
             // Circle circle = Circle.random(image.getWidth(), image.getHeight());
             // circle.draw(image);
