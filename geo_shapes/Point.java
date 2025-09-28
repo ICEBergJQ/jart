@@ -1,19 +1,20 @@
 package geo_shapes;
 
 import java.awt.Color;
-import java.util.Random;
 
 public class Point implements Drawable {
     private int x;
     private int y;
     private Color color;
 
+    // Constructor
     public Point(int x, int y) {
         this.x = x;
         this.y = y;
-        this.color = randomColor();
+        this.color = Color.WHITE; // default color, can be changed
     }
 
+    // Getters
     public int getX() {
         return x;
     }
@@ -22,10 +23,12 @@ public class Point implements Drawable {
         return y;
     }
 
+    // Optionally let us change the color
     public void setColor(Color color) {
         this.color = color;
     }
 
+    // --- Drawable implementation ---
     @Override
     public void draw(Displayable displayable) {
         displayable.display(x, y, color);
@@ -36,13 +39,8 @@ public class Point implements Drawable {
         return color;
     }
 
-    public static Point random(int width, int height) {
-        Random rand = new Random();
-       return new Point(rand.nextInt(width), rand.nextInt(height));
-    }
-
-    public static Color randomColor() {
-        Random rand = new Random();
-        return new Color(rand.nextInt(256), rand.nextInt(256), rand.nextInt(256));
+    // For debugging
+    public String toString() {
+        return "Point(" + x + ", " + y + ")";
     }
 }

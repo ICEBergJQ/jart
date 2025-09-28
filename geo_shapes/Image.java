@@ -5,6 +5,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import javax.imageio.ImageIO;
 
+
 public class Image implements Displayable {
     private BufferedImage image;
     private int width;
@@ -16,12 +17,15 @@ public class Image implements Displayable {
         this.image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
     }
 
-    @Override
+
     public void display(int x, int y, Color color) {
         if (x >= 0 && x < width && y >= 0 && y < height) {
             image.setRGB(x, y, color.getRGB());
         }
     }
+
+
+
 
     @Override
     public void save(String filename) {

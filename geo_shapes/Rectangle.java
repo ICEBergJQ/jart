@@ -2,14 +2,13 @@ package geo_shapes;
 
 import java.awt.Color;
 import java.util.Random;
-public class Triangle implements Drawable {
-    private Point p1, p2, p3;
+public class Rectangle implements Drawable {
+    private Point p1, p2;
     private Color color;
 
-    public Triangle(Point p1, Point p2, Point p3) {
+    public Rectangle(Point p1, Point p2) {
         this.p1 = p1;
         this.p2 = p2;
-        this.p3 = p3;
         this.color = randomcolor();
     }
 
@@ -19,16 +18,22 @@ public class Triangle implements Drawable {
 
     @Override
     public void draw(Displayable displayable) {
-        Line l1=new Line(p1, p2);
-        Line l2=new Line(p2, p3);
-        Line l3=new Line(p3, p1);
+        int x1 = p1.getX();
+        int y1 = p1.getY();
+        int x2 = p2.getX();
+        int y2 = p2.getY();
+        Line l1=new Line(new Point(x1, y1), new Point(x2, y1));
+        Line l2=new Line(new Point(x2, y1), new Point(x2, y2));
+        Line l3=new Line(new Point(x2, y2), new Point(x1, y2));
+        Line l4=new Line(new Point(x1, y2), new Point(x1, y1));
         l1.setColor(this.color);
         l2.setColor(this.color);
         l3.setColor(this.color);
+        l4.setColor(this.color);
         l1.draw(displayable);
         l2.draw(displayable);
         l3.draw(displayable);
-
+        l4.draw(displayable);
     }
 
     @Override
