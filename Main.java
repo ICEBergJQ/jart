@@ -14,6 +14,16 @@ public class Main {
             // Circle circle = Circle.random(image.getWidth(), image.getHeight());
             // circle.draw(image);
         }
+
+         for (int i = 0; i < 500; i++) {
+            // Point point = Point.random(image.getWidth(), image.getHeight());
+            // point.draw(image);
+            // Circle circle = Circle.random(image.getWidth(), image.getHeight());
+            // circle.draw(image);
+            Line line = Line.random(image.getWidth(), image.getHeight());
+            line.draw(image);
+        }
+        
         image.save("image.png");
     }
 }

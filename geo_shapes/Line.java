@@ -11,7 +11,7 @@ public class Line implements Drawable {
     public Line(Point p1, Point p2) {
         this.p1 = p1;
         this.p2 = p2;
-        this.color = Color.WHITE;
+        this.color = randomColor();
     }
 
     public static Line random(int width, int height) {
@@ -49,5 +49,10 @@ public class Line implements Drawable {
     @Override
     public Color getColor() {
         return color;
+    }
+
+    public static Color randomColor() {
+        Random rand = new Random();
+        return new Color(rand.nextInt(256), rand.nextInt(256), rand.nextInt(256));
     }
 }
